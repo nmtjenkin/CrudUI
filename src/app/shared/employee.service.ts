@@ -7,12 +7,12 @@ import 'rxjs/add/operator/toPromise';
 import { Employee } from './employee.model';
 
 @Injectable()
-export class EmployeeService {
+export class  EmployeeService {
   selectedEmployee: Employee;
   employees: Employee[];
   readonly baseURL = 'http://localhost:3000/employees';
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   postEmployee(emp: Employee) {
     return this.http.post(this.baseURL, emp);
